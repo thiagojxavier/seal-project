@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+    font-family: "Oxygen", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-background: #030207;
+    --color-font: #dfdee3;
+    --color-anchor: #1e4e7e;
+    --font-size-principal: 4rem;
+    --font-size-secondary: 3rem;
+    --font-size-paragraph: 1.25rem;
+    --font-weight-sm: 300; 
+    --font-weight-md: 400;
+    --padding-sm: 1rem;
+    --padding-lg: 5rem;
+}
+
+body {
+    background-color: var(--color-background);
+    width: 100%;
+    color: var(--color-font);
+}
+
+a {
+    color: var(--color-anchor);
+}
+
+.hero {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), var(--color-background));
+    min-height: 100vh;
+}
+
+.hero__background {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -10;
+}
+
+.hero__foreground {
+    padding-top: 40vh;
+    text-align: center;
+}
+
+.hero__title {
+    font-weight: var(--font-weight-sm);
+    font-size: var(--font-size-principal);
+    padding: var(--padding-sm);
+}
+
+.hero__text {
+    text-align: center;
+    font-weight: var(--font-weight-md);
+    text-transform: uppercase;
+    font-size: var(--font-size-paragraph);
+    letter-spacing: .3rem;
+}
+
+.section {
+    padding: 0 var(--padding-lg);
+    overflow: hidden;
+}
+
+.section__title {
+    font-weight: var(--font-weight-sm);
+    font-size: var(--font-size-secondary);
+    text-align: center;
+    padding: var(--padding-lg) 0 ;
+}
+
+.section__img,
+.section__img-inline {
+    width: 100%;
+    border-radius: .75rem;
+    box-shadow: 0 1rem 2rem .5rem rgba(20, 116, 180, 0.25);
+    object-fit: cover;
+    object-position: top;
+    position: relative;
+    max-height: 30rem;
+}
+
+.section__text, .section__text-inline {
+    font-size: var(--font-size-paragraph);
+    line-height: 1.75rem;
+    margin: 4rem auto;
+}
+
+.section__img-inline {
+    border-top-left-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+    float: left;
+    height: 25rem;
+    width: 20rem;
+    margin: 0 4rem 2rem 0;
+}
+
+.section__text-inline {
+    margin-top: 6rem;
+    text-align: left;
+}
+
+.section__text-inline > p {
+    margin: 1.5rem;
+}
+
+#hangouts img{
+    object-position: center;
+}
+
+.gallery {
+    text-align: center;
+}
+
+.gallery__img {
+    border-radius: .75rem;
+    height: 16rem;
+    width: 16rem;
+    object-fit: cover;
+    transform: rotate(-2deg);
+}
+
+.gallery__img-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.gallery__img-wrapper + .gallery__img-wrapper {
+    margin: 3rem 0 0 3rem;
+}
+
+.gallery__img-wrapper:nth-child(even) > .gallery__img {
+    top: 1rem;
+    transform: rotate(2deg);
+
+}
+
+.gallery__img-wrapper::after {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    height: 1.25rem;
+    width: 1.25rem;
+    top: 0.25rem;
+    right: 1rem;
+}
+
+.gallery__img-wrapper:nth-child(even)::after {
+    left: 1rem;
+}
+
+.footer {
+    margin-top: 4rem;
+    padding: 2rem;
+    text-align: center;
+}
